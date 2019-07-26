@@ -14,7 +14,7 @@ RUN apt-get update --fix-missing && apt-get install -y \
     imagemagick
 
 # downgrade to cudnn 7.0 (tensorflow 1.5 binary doesn't work with 7.1)
-RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
+RUN apt-get update && apt-get install -y --allow-change-held-packages --allow-downgrades --no-install-recommends \
     bzip2 \
     g++ \
     git \
