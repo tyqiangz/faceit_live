@@ -68,68 +68,10 @@ Then create the directory `./data/persons` and put one image containing the face
 
 You can use **Cheese** or another program to capture a video from your webcam and use that for training. This is the better than using a mobile phone you will be in your real world environment that will be later used for conversion.
 
-
-This code is based on the library [deepfakes/faceswap](https://github.com/deepfakes/faceswap) and the work done by Gaurav Oberoi on the [FaceIt](https://github.com/goberoi/faceit) library that makes it easy to extract frames for training directly from YouTube.
-
-# Setup
-
-## Requirements
-This has been tested on **Ubuntu 16.04 with a Titan X (Pascal) GPU**.
-You will need the following to make it work:
-
-    Linux host OS
-    NVidia fast GPU (GTX 1080, GTX 1080i, Titan, etc ...)
-    Fast Desktop CPU (Quad Core or more)
-    NVidia CUDA 9 and cuDNN 7 libraries installed
-    Docker installed
-    Webcam working at /dev/video0
-
-## Setup Host System
-To use the fake webcam feature to enter conferences with our stream we need to insert the **v4l2loopback** kernel module. Let's setup our fake webcam:
-
-```
-$ git clone https://github.com/umlaeute/v4l2loopback.git
-$ make && sudo make install
-$ sudo depmod -a
-$ sudo modprobe v4l2loopback video_nr=1
-$ v4l2-ctl -d /dev/video1 -c timeout=3000
-```
-
-This will create a new stream at */dev/video1*
-
-## Clone this repository
-Don't forget to use the *--recurse-submodules* parameter to checkout all dependencies.
-
-    $ git clone --recurse-submodules https://github.com/alew3/faceit_live.git /local_path/
-
-## Setup Docker
-To make it easy to install all depencies a Dockerfile has been provided. After [installing Docker](https://docs.docker.com/install/).  Go to the project directory and:
-    
-    $ cd /local_path/faceit_live
-    $ xhost local:root # this is necessary for your docker to access the host interface
-    $ docker-compose build
-    $ chmod +x ./run_docker.sh
-
-To run the docker use the provided shell script that runs the Docker and makes the webcam and XTerminal available in the container.
-
-    $ ./run_docker.sh
-
-# Usage
-
-
-Then create the directory `./data/persons` and put one image containing the face of person A and another of person B. Use the same name that you did when setting up the model. This file is used to filter their face from any others in the videos you provide. E.g.:
-```
-./data/persons/me.jpg
-./data/persons/oliver.jpg
-```
-
-# Capture a video sample of you from your webcam
-
-You can use **Cheese** or another program to capture a video from your webcam and use that for training. This is the better than using a mobile phone you will be in your real world environment that will be later used for conversion.
-
     $ sudo apt-get install cheese
     $ cheese
 
+This code is based on the library [deepfakes/faceswap](https://github.com/deepfakes/faceswap) and the work done by Gaurav Oberoi on the [FaceIt](https://github.com/goberoi/faceit) library that makes it easy to extract frames for training directly from YouTube.
 
 You will need at least 512 images for training, so do a few videos from yourself moving your head around and making different expressions. Afterwards put them in the folder ./data/videos/:
 

@@ -73,7 +73,7 @@ COPY requirements.txt /code/
 
 RUN /bin/bash -c "\
     pip install --upgrade pip && \
-    pip install -r /code/requirements.txt"
+    pip install --ignore-installed -r /code/requirements.txt"
 
 # edit ImageMagick policy /etc/ImageMagick-6/policy.xml
 # comment out this line <policy domain="path" rights="none" pattern="@*" />
