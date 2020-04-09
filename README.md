@@ -1,9 +1,13 @@
+
+# New Version -> FaceIt Live3
+
+Checkout my other repository [Faceit Live3](https://github.com/alew3/faceit_live3) for a more up to date version, that uses a new technique that only requires a single image from the target image and no training is required. 
+
 # FaceIt Live
 
 FaceIT Live will swap your face in realtime to someone else's. For laughs you can enter a conference with this modified video stream.
 
 ![Joing a video conference call as John Oliver or another celebrity is great fun](deep_live.gif)
-
 
 This code is based on the library [deepfakes/faceswap](https://github.com/deepfakes/faceswap) and the work done by Gaurav Oberoi on the [FaceIt](https://github.com/goberoi/faceit) library that makes it easy to extract frames for training directly from YouTube.
 

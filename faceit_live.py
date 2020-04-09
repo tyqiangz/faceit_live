@@ -285,13 +285,8 @@ class FaceIt:
                 if (webcam):
                     time.sleep(1/30.0)
                     # firefox needs RGB 
-<<<<<<< HEAD:faceit_live.py
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) 
-                    # chrome and skype UYUV - not working at the
-=======
                     # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) 
                     # chrome and skype UYUV - not working at the moment
->>>>>>> 5f793ec35b6dc9d88cd20faa6bd6ed4acf65b10c:faceit_live.py
                     # image = cv2.cvtColor(image, cv2.COLOR_BGR2YUV)
                     
                     camera.schedule_frame(image)
