@@ -389,18 +389,9 @@ class FaceSwapInterface:
 if __name__ == '__main__':
     faceit = FaceIt('ale_to_oliver', 'ale', 'oliver')
 
-    faceit.add_video('ale', 'aleweb.webm')
-    faceit.add_video('ale', 'ale.mp4')
-    faceit.add_video('ale', 'myvideo2.webm')
-    faceit.add_video('ale', 'aleweb2.webm')
+    faceit.add_video('ale', 'ale.mp4','https://www.youtube.com/watch?v=o5AoMNF7dnE')
 
-    faceit.add_video('oliver', 'oliver_trumpcard.mp4', 'https://www.youtube.com/watch?v=JlxQ3IUWT0I')
-    faceit.add_video('oliver', 'oliver_taxreform.mp4', 'https://www.youtube.com/watch?v=g23w7WPSaU8')
-    faceit.add_video('oliver', 'oliver_zazu.mp4', 'https://www.youtube.com/watch?v=Y0IUPwXSQqg')
-    faceit.add_video('oliver', 'oliver_pastor.mp4', 'https://www.youtube.com/watch?v=mUndxpbufkg')
-    faceit.add_video('oliver', 'oliver_cookie.mp4', 'https://www.youtube.com/watch?v=H916EVndP_A')
-    faceit.add_video('oliver', 'oliver_lorelai.mp4', 'https://www.youtube.com/watch?v=G1xP2f1_1Jg')
-
+    faceit.add_video('oliver', 'oliver_trumpcard.mp4', 'https://www.youtube.com/watch?v=eyX5VWzeKPM')
 
     FaceIt.add_model(faceit)
     parser = argparse.ArgumentParser()

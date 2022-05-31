@@ -62,10 +62,10 @@ RUN echo export CUDA_DEVICE_ORDER="PCI_BUS_ID" >> ~/.bashrc
 
 # https://software.intel.com/en-us/mkl
 RUN /bin/bash -c "\
-    conda install -y mkl-service && \
+    #conda install -y mkl-service && \
     conda install -y -c menpo ffmpeg"
 
-RUN echo "export MKL_DYNAMIC=FALSE" >> ~/.bashrc
+#RUN echo "export MKL_DYNAMIC=FALSE" >> ~/.bashrc
 
 RUN python --version
 RUN echo "installing python requirements"
