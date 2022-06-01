@@ -1,6 +1,20 @@
-version: '2'
+version: "2"
 
 services:
   faceit_live:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-cpu
     image: faceit_live:latest
+    volumes:
+      - ".:/code/faceit_live"
+      - "~/.Xauthority:/root/.Xauthority"
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    working_dir: /code/faceit_live
+    environment:
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - PYTHONDONTWRITEBYTECODE=1
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
