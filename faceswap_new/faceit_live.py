@@ -387,11 +387,11 @@ class FaceSwapInterface:
 
 
 if __name__ == '__main__':
-    faceit = FaceIt('ale_to_oliver', 'ale', 'oliver')
+    faceit = FaceIt('western_male_reporter_to_north_korean_woman', 'western_male_reporter', 'north_korean_woman')
 
-    faceit.add_video('ale', 'ale.mp4')
+    faceit.add_video('western_male_reporter', 'western_male_reporter.mp4')
 
-    faceit.add_video('oliver', 'oliver_trumpcard.mp4')
+    faceit.add_video('north_korean_woman', 'north_korean_woman.mp4')
 
     FaceIt.add_model(faceit)
     parser = argparse.ArgumentParser()
